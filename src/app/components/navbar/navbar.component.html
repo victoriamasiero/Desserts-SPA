@@ -1,0 +1,10 @@
+<div class="full-nav-container">
+  <nav class="nav-container">
+    <img src="/assets/images/logo.png" class="logo-container">
+
+    <a *ngFor="let link of links" class="nav-container-link" href="#" (click)="activeLink = link"
+      [active]="activeLink == link">
+      {{link}} </a>
+
+  </nav>
+</div>

@@ -1,0 +1,27 @@
+.info-card {
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: center;
+    align-items: center;
+    color: rgb(51, 48, 48);
+}
+
+.info-card.light:hover,
+.info-card.medium:hover,
+.info-card.dark:hover {
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 500ms linear;
+}
+
+.info-card.light {
+    background-color: #cbd4c2;
+}
+
+.info-card.medium {
+    background-color: #DBEBC0;
+}
+
+.info-card.dark {
+    background-color: #C3B299;
+}

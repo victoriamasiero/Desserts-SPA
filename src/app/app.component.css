@@ -1,0 +1,32 @@
+.header-container {
+    display: flex;
+    flex: 2 1 auto;
+    background-color: #eee6de;
+    /*
+    background-image: url('/assets/images/back1.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;*/
+}
+
+.content-container {
+    display: flex;
+    flex: 1 1 auto;
+    background-color: #fcf1df;
+}
+
+.footer {
+    display: flex;
+    flex: 0 1 auto;
+    background-color: #e5b181;
+    justify-content: center;
+    align-items: center;
+}
+.content-container > router-outlet {
+    display: block;
+    flex: 0;
+}
+.content-container > ::ng-deep * {
+    flex: 1 1 auto;
+    display: flex;
+}
