@@ -6,6 +6,7 @@ body {
     margin: 0; 
     font-family: 'Alegreya SC', serif;
     font-feature-settings: "smcp" on;
+    overflow-x: hidden;
 }
 
 app-root {

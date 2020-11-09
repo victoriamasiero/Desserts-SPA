@@ -1,10 +1,19 @@
+<div #overlay_header class="overlay-header"></div>
+
 <div class="full-nav-container">
   <nav class="nav-container">
-    <img src="/assets/images/logo.png" class="logo-container">
 
-    <a *ngFor="let link of links" class="nav-container-link" href="#" (click)="activeLink = link"
-      [active]="activeLink == link">
-      {{link}} </a>
+    <img src="/assets/images/logo.png" class="logo-container" (click)="handleNavigation('home')">
+
+    <a class="nav-container-link" [ngClass]="(sel_navigation === 'info')?'active':''"
+      (click)="handleNavigation('info')">¿Quiénes
+      somos?</a>
+
+    <a class="nav-container-link" href="/">Guía de postres</a>
+
+    <a class="nav-container-link" href="/">Servicios</a>
+
+    <a class="nav-container-link" href="/">Contacto</a>
 
   </nav>
 </div>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -6,17 +7,35 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  links: string[];
   logo_url: string;
-  activeLink: string;
+  sel_navigation: string;
+  @ViewChild("overlay_header") overlay: ElementRef;
 
-  constructor() { }
+  constructor(private router: Router) { }
+
+  handleNavigation(ref) {
+    if (ref === this.sel_navigation) return;
+    this.sel_navigation = ref;
+    this.overlay.nativeElement.classList.add("show");
+
+    setTimeout(() => {
+      this.overlay.nativeElement.classList.remove("show");
+      this.overlay.nativeElement.classList.add("hide-right");
+    }, 500);
+
+    setTimeout(() => {
+      this.router.navigateByUrl(ref).then(() => {
+        this.overlay.nativeElement.classList.remove("hide-right");
+        this.overlay.nativeElement.classList.add("hide");
+        this.overlay.nativeElement.classList.remove("hide");
+      });
+    }, 800);
+
+  }
 
   ngOnInit(): void {
-    console.log("ola");
-    this.links = ["¿Quiénes somos?", "Guía de postres", "Servicios", "Contacto"];
-
     this.logo_url = "../../assets/images/logo.svg";
   }
+
 
 }

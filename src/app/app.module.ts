@@ -11,6 +11,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatCardModule} from '@angular/material/card';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { InfoPageComponent } from './pages/info-page/info-page.component';
 
 
 
@@ -21,7 +22,8 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     ContentContainerComponent,
     NavbarComponent,
     FooterComponent,
-    HomePageComponent
+    HomePageComponent,
+    InfoPageComponent
   ],
   imports: [
     BrowserModule,

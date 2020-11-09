@@ -1,6 +1,6 @@
 .info-card {
     display: flex;
-    flex: 1 1 auto;
+    flex: 1 1 0px;
     justify-content: center;
     align-items: center;
     color: rgb(51, 48, 48);
