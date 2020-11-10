@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,33 +9,41 @@ import { Router } from '@angular/router';
 export class NavbarComponent implements OnInit {
   logo_url: string;
   sel_navigation: string;
-  @ViewChild("overlay_header") overlay: ElementRef;
+  //@Output('navLink') navLink = new EventEmitter();
+  nav_link: string;
+  @Output() nav_flag = new EventEmitter<string>();
 
   constructor(private router: Router) { }
 
   handleNavigation(ref) {
     if (ref === this.sel_navigation) return;
     this.sel_navigation = ref;
-    this.overlay.nativeElement.classList.add("show");
+    this.nav_link = ref;
+    this.nav_flag.emit(ref);
 
     setTimeout(() => {
-      this.overlay.nativeElement.classList.remove("show");
-      this.overlay.nativeElement.classList.add("hide-right");
+      this.router.navigate([ref]);
     }, 500);
 
-    setTimeout(() => {
-      this.router.navigateByUrl(ref).then(() => {
-        this.overlay.nativeElement.classList.remove("hide-right");
-        this.overlay.nativeElement.classList.add("hide");
-        this.overlay.nativeElement.classList.remove("hide");
-      });
-    }, 800);
+    /*
+    this.router.navigateByUrl(ref).then((data)=>{
+      console.info("navigation ok"); 
+      console.info(data);
+    }).catch((error)=>{
+      console.error(error);
+    })*/
 
+    /*
+    this.overlay.nativeElement.classList.add("show");
+
+    //Timeout for navigation
+    setTimeout(() => {
+      this.overlay.nativeElement.classList.remove("show");
+      this.router.navigate([ref]);
+    }, 1000);*/
   }
 
   ngOnInit(): void {
     this.logo_url = "../../assets/images/logo.svg";
   }
-
-
 }

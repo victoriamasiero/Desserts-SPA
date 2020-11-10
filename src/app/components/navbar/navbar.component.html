@@ -1,4 +1,6 @@
-<div #overlay_header class="overlay-header"></div>
+<!-- <div #overlay_header class="overlay-header"></div>
+-->
+<app-transition-overlay class="overlay-container" [nav_link]="nav_link"></app-transition-overlay>
 
 <div class="full-nav-container">
   <nav class="nav-container">
@@ -9,11 +11,11 @@
       (click)="handleNavigation('info')">¿Quiénes
       somos?</a>
 
-    <a class="nav-container-link" href="/">Guía de postres</a>
+    <a class="nav-container-link" (click)="handleNavigation('menu')">Guía de postres</a>
 
-    <a class="nav-container-link" href="/">Servicios</a>
+    <a class="nav-container-link" (click)="handleNavigation('services')">Servicios</a>
 
-    <a class="nav-container-link" href="/">Contacto</a>
+    <a class="nav-container-link" (click)="handleNavigation('contact')">Contacto</a>
 
   </nav>
 </div>

@@ -1,3 +1,9 @@
+.overlay-container{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
 .full-nav-container {
     display: flex;
     flex: 1 1 auto;
@@ -56,19 +62,9 @@
     height: 100%;
     width: 100%;
     left: -100vw;
-    
 }
 
 .overlay-header.show {
-    left: 0;
-    transition: left 200ms linear;
-}
-
-.overlay-header.hide-right {
     left: 100vw;
-    transition: left 200ms linear;
-}
-
-.overlay-header.hide {
-    left: -100vw;
+    transition: left 1s cubic-bezier(.5,1,.5,0);
 }

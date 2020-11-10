@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-header-container',
@@ -6,8 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header-container.component.css']
 })
 export class HeaderContainerComponent implements OnInit {
-
+  @Output() nav_flag = new EventEmitter<string>();
   constructor() { }
+
+  handleNav(link) {
+    this.nav_flag.emit(link);
+  }
 
   ngOnInit(): void {
   }

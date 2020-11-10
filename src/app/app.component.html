@@ -1,5 +1,10 @@
-<app-header-container class="header-container"></app-header-container>
+<app-header-container class="header-container" (nav_flag)="handleNav($event)">
+</app-header-container>
+
 <app-content-container class="content-container">
   <router-outlet></router-outlet>
+  <app-transition-content-overlay class="overlay-container" [nav_link]="nav_link"></app-transition-content-overlay>
 </app-content-container>
+
+
 <app-footer class="footer"></app-footer>

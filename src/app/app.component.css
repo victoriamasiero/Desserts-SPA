@@ -2,17 +2,14 @@
     display: flex;
     flex: 2 1 auto;
     background-color: #eee6de;
-    /*
-    background-image: url('/assets/images/back1.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;*/
+    position: relative;
 }
 
 .content-container {
     display: flex;
     flex: 1 1 auto;
     background-color: #fcf1df;
+    position: relative;
 }
 
 .footer {
@@ -29,4 +26,10 @@
 .content-container > ::ng-deep * {
     flex: 1 1 auto;
     display: flex;
+}
+
+.overlay-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
