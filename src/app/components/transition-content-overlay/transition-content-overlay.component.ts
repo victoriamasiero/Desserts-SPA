@@ -7,7 +7,7 @@ import { Component, OnInit, Input, ViewChild, ElementRef, OnChanges } from '@ang
 })
 export class TransitionContentOverlayComponent implements OnInit, OnChanges {
   @Input() nav_status: string;
-  @Input() nav_link: boolean;
+  @Input() nav_link: string;
   @ViewChild("trans_content_overlay") overlay: ElementRef;
 
   constructor() { }
@@ -16,12 +16,19 @@ export class TransitionContentOverlayComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(): void {
-    if (this.nav_link) {
-      this.overlay.nativeElement.classList.add("show");
+    if (this.nav_link === "start") {
+      this.overlay.nativeElement.classList.toggle("show-animation");
+    }
 
+    else if (this.nav_link === "end") {
+      //Timeout set for animation to complete before rendering content
       setTimeout(() => {
-        this.overlay.nativeElement.classList.remove("show");
-      }, 1000);
+        this.overlay.nativeElement.classList.toggle("show-animation");
+        this.overlay.nativeElement.classList.toggle("hide-animation");
+      }, 500);
+
+      this.overlay.nativeElement.classList.toggle("hide-animation");
+
     }
   }
 

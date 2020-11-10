@@ -7,6 +7,9 @@ body {
     font-family: 'Alegreya SC', serif;
     font-feature-settings: "smcp" on;
     overflow-x: hidden;
+    display: flex;
+    flex: 1 1 auto;
+    height: -webkit-fill-available;
 }
 
 app-root {

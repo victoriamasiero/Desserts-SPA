@@ -27,7 +27,7 @@
 
 .full-nav-container .nav-container .nav-container-link {
     display: flex;
-    flex: 0 1 150px;
+    flex: 1 1 0px;
     flex-direction: column;
     text-decoration: none;
     color: #97313b;

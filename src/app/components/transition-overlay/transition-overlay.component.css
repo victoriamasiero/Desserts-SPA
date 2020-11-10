@@ -4,17 +4,36 @@
     z-index: 100;
     height: 100%;
     width: 100%;
-    left: -100vw;
+    flex: 1 1 auto;
+    justify-content: center;
+    align-items: center;
+    display: none;
 }
+
+.transition-overlay.show-animation {
+    display: flex;
+    animation-name: show-me;
+    animation-duration: 400ms;
+}
+
+.transition-overlay.hide-animation {
+    display: flex;
+    animation-name: hide-me;
+    animation-duration: 500ms;
+}
+
+@keyframes show-me {
+    0%   {left:-100vw;}
+    100%  {left:0px;}
+  }
+
+  @keyframes hide-me {
+    0%   {left:0vw;}
+    100%  {left:100vw;}
+  }
 
 /*
 .transition-overlay.show {
     left: 0;
-    transition: left 1s ease-out;
-}*/
-
-
-.transition-overlay.show {
-    left: 100vw;
     transition: left 1s cubic-bezier(.5,1,.5,0);
-}
+}*/

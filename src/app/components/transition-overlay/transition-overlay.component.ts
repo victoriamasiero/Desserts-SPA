@@ -15,13 +15,20 @@ export class TransitionOverlayComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes): void {
-    console.log("changessssssss?????????????????????????????")
-    if (this.nav_link) {
-      this.overlay.nativeElement.classList.add("show");
-
-      setTimeout(() => {
-        this.overlay.nativeElement.classList.remove("show");
-      }, 1000);
+    if (this.nav_link === "start") {
+      this.overlay.nativeElement.classList.toggle("show-animation");
     }
+
+    else if (this.nav_link === "end") {
+      //Timeout set for animation to complete before rendering content
+      setTimeout(() => {
+        this.overlay.nativeElement.classList.toggle("show-animation");
+        this.overlay.nativeElement.classList.toggle("hide-animation");
+      }, 500);
+
+      this.overlay.nativeElement.classList.toggle("hide-animation");
+
+    }
+
   }
 }

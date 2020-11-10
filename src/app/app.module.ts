@@ -17,6 +17,7 @@ import { MenuPageComponent } from './pages/menu-page/menu-page.component';
 import { ServicesPageComponent } from './pages/services-page/services-page.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { TransitionContentOverlayComponent } from './components/transition-content-overlay/transition-content-overlay.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 
 
@@ -34,6 +35,7 @@ import { TransitionContentOverlayComponent } from './components/transition-conte
     ServicesPageComponent,
     ContactPageComponent,
     TransitionContentOverlayComponent,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,

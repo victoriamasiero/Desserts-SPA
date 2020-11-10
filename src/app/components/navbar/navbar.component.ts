@@ -15,32 +15,31 @@ export class NavbarComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  handleNavigation(ref) {
+  /**
+   *Handling user navbar navigation
+   *
+   * @param {*} ref the path of the selected nav link
+   * @returns {void}
+   * @memberof NavbarComponent
+   */
+  handleNavigation(ref): void {
     if (ref === this.sel_navigation) return;
     this.sel_navigation = ref;
-    this.nav_link = ref;
-    this.nav_flag.emit(ref);
+    this.nav_link = "start";
+    this.nav_flag.emit("start");
 
+    //Timeout set for animation to complete before navigating
     setTimeout(() => {
-      this.router.navigate([ref]);
-    }, 500);
+      this.router.navigateByUrl(ref).then((data) => {
+        this.nav_link = "end";
+        this.nav_flag.emit("end");
 
-    /*
-    this.router.navigateByUrl(ref).then((data)=>{
-      console.info("navigation ok"); 
-      console.info(data);
-    }).catch((error)=>{
-      console.error(error);
-    })*/
-
-    /*
-    this.overlay.nativeElement.classList.add("show");
-
-    //Timeout for navigation
-    setTimeout(() => {
-      this.overlay.nativeElement.classList.remove("show");
-      this.router.navigate([ref]);
-    }, 1000);*/
+      }).catch((error) => {
+        console.error("An unexpected error ocurred while navigating ", error);
+        this.nav_link = "end";
+        this.nav_flag.emit("end");
+      })
+    }, 800);
   }
 
   ngOnInit(): void {
