@@ -24,7 +24,7 @@ export class TransitionOverlayComponent implements OnInit, OnChanges {
       setTimeout(() => {
         this.overlay.nativeElement.classList.toggle("show-animation");
         this.overlay.nativeElement.classList.toggle("hide-animation");
-      }, 500);
+      }, 300);
 
       this.overlay.nativeElement.classList.toggle("hide-animation");
 

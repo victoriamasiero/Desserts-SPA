@@ -19,7 +19,7 @@
 .transition-overlay.hide-animation {
     display: flex;
     animation-name: hide-me;
-    animation-duration: 500ms;
+    animation-duration: 300ms;
 }
 
 @keyframes show-me {

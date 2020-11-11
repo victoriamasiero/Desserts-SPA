@@ -1,13 +1,16 @@
 .canvas {
-    align-items: center;
-    background: #BF8B85;
-    border-radius: 50%;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-    display: flex;
-    height: 10em;
-    justify-content: center;
-    margin: 1em 1em 2em 1em;
-    width: 10em;
+  align-items: center;
+  background-image: url('../../../assets/images/clock.svg');
+  background-size: cover;
+  background-position: center;
+  /*border: solid 5px #f4f0f98a;*/
+  border-radius: 50%;
+  display: flex;
+  height: 10em;
+  justify-content: center;
+  margin: 1em 1em 2em 1em;
+  width: 10em;
+  box-shadow: 0 0px 21px rgb(202 158 150);
   }
   
   /* Spinner 2 starts here */
@@ -17,7 +20,7 @@
   
   .spinner2 {
     animation: spinnerTwo 1s linear infinite;
-    background: #e7d1ce;
+    background: #DABECA;
     border-radius: 100px;
     height: 3em;
     transform-origin: top;
@@ -28,7 +31,7 @@
   
   .hourHand {
     animation: spinnerTwo 7s linear infinite;
-    background: #e7d1ce;
+    background: #DABECA;
     border-radius: 100px;
     height: 2em;
     transform-origin: top;
@@ -38,7 +41,7 @@
   }
   
   .dot {
-    background: #e7d1ce;
+    background: #DABECA;
     border-radius: 100%;
     height: .8em;
     width: .8em;

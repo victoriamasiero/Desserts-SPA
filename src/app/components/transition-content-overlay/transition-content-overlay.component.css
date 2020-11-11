@@ -9,15 +9,19 @@
 
 
 .transition-content-overlay.show-animation {
-    display: block;
     animation-name: show-me;
     animation-duration: 500ms;
 }
 
 .transition-content-overlay.hide-animation {
-    display: block;
     animation-name: hide-me;
-    animation-duration: 500ms;
+    animation-duration: 300ms;
+}
+
+.transition-content-overlay.show-animation,
+.transition-content-overlay.hide-animation {
+    display: block;
+    z-index: 600;
 }
 
 @keyframes show-me {

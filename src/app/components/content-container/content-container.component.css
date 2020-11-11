@@ -1,8 +1,3 @@
-.content-container {
-    display: flex;
-    flex: 1 1 auto;
-}
-
 router-outlet {
     display: flex;
     flex: 1 1 auto;
