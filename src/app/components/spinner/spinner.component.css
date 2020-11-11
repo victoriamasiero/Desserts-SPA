@@ -1,6 +1,6 @@
 .canvas {
   align-items: center;
-  background-image: url('../../../assets/images/clock.svg');
+ /*background-image: url('../../../assets/images/clock.svg');*/
   background-size: cover;
   background-position: center;
   /*border: solid 5px #f4f0f98a;*/
@@ -10,7 +10,18 @@
   justify-content: center;
   margin: 1em 1em 2em 1em;
   width: 10em;
-  box-shadow: 0 0px 21px rgb(202 158 150);
+  /*box-shadow: 0 0px 21px rgb(202 158 150);*/
+  animation-name: change-back;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+  }
+
+  @keyframes change-back {
+    10%   {background-image: url('../../../assets/images/chomp.png');}
+    25%   {background-image: url('../../../assets/images/chomp1.png');}
+    50%   {background-image: url('../../../assets/images/chomp2.png');}
+    75%   {background-image: url('../../../assets/images/chomp3.png');}
+    80%  {background-image: none;}
   }
   
   /* Spinner 2 starts here */
