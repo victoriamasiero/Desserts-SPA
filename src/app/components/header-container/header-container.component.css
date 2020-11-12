@@ -3,4 +3,28 @@
     flex: 1 1 auto;
     flex-direction: column;
     position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.full-container,
+.full-container.home {
+    background-image: url('../../../assets/images/home_header.png');
+}
+
+.full-container.info {
+    background-image: url('../../../assets/images/info_header.jpg');
+}
+
+.full-container.menu {
+    background-image: url('../../../assets/images/menu_header.png');
+}
+
+.full-container.services {
+    background-image: url('../../../assets/images/services_header.png');
+}
+
+.full-container.contact {
+    background-image: url('../../../assets/images/contact_header.jpg');
 }

@@ -1,21 +1,22 @@
-<!-- <div #overlay_header class="overlay-header"></div>
--->
 <app-transition-overlay class="overlay-container" [nav_link]="nav_link"></app-transition-overlay>
 
-<div class="full-nav-container">
+<div class="full-nav-container" [class]="sel_navigation">
   <nav class="nav-container">
 
-    <img src="/assets/images/logo.png" class="logo-container" (click)="handleNavigation('home')">
+    <img src="/assets/images/logo.svg" class="logo-container" (click)="handleNavigation('home')">
 
-    <a class="nav-container-link" [ngClass]="(sel_navigation === 'info')?'active':''"
+    <a class="nav-container-link info" [ngClass]="(sel_navigation === 'info')?'active':''"
       (click)="handleNavigation('info')">¿Quiénes
       somos?</a>
 
-    <a class="nav-container-link" (click)="handleNavigation('menu')">Guía de postres</a>
+    <a class="nav-container-link menu" [ngClass]="(sel_navigation === 'menu')?'active':''"
+      (click)="handleNavigation('menu')">Guía de postres</a>
 
-    <a class="nav-container-link" (click)="handleNavigation('services')">Servicios</a>
+    <a class="nav-container-link services" [ngClass]="(sel_navigation === 'services')?'active':''"
+      (click)="handleNavigation('services')">Servicios</a>
 
-    <a class="nav-container-link" (click)="handleNavigation('contact')">Contacto</a>
+    <a class="nav-container-link contact" [ngClass]="(sel_navigation === 'contact')?'active':''"
+      (click)="handleNavigation('contact')">Contacto</a>
 
   </nav>
 </div>

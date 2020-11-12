@@ -11,26 +11,92 @@
     padding: 15px;
 }
 
+.full-nav-container,
+.full-nav-container.home {
+    color: #815b57;
+}
+
+.full-nav-container .nav-container .nav-container-link:hover,
+.full-nav-container.home .nav-container .nav-container-link:hover {
+    color: #a37570;
+    transition: color 0.5s;
+}
+
+.full-nav-container .nav-container .nav-container-link::after,
+.full-nav-container.home .nav-container .nav-container-link::after {
+    background: #a37570;
+}
+
+.full-nav-container.load,
+.full-nav-container.load .nav-container .nav-container-link:hover {
+    color: #BF8B85;
+}
+
+.full-nav-container.load .nav-container .nav-container-link:hover::after {
+    width: 0;
+}
+
+.full-nav-container.info,
+.full-nav-container.info .nav-container .nav-container-link:hover {
+    color: white;
+}
+
+.full-nav-container.info .nav-container .nav-container-link::after{
+    background: white;
+}
+
+.full-nav-container.menu,
+.full-nav-container.menu .nav-container .nav-container-link:hover {
+    color: #b25f80;
+}
+
+.full-nav-container.menu .nav-container .nav-container-link.active,
+.full-nav-container.menu .nav-container .nav-container-link:hover {
+    color: #df7ca4;
+    transition: color 0.5s;
+}
+
+.full-nav-container.menu .nav-container .nav-container-link::after{
+    background: #df7ca4;
+}
+
+.full-nav-container.services,
+.full-nav-container.services .nav-container .nav-container-link:hover {
+    color: rgb(199, 138, 26);
+}
+
+.full-nav-container.services .nav-container .nav-container-link::after{
+    background: rgb(199, 138, 26);
+}
+
+.full-nav-container.contact,
+.full-nav-container.contact .nav-container .nav-container-link:hover {
+    color: #EEE6DE;
+}
+
+.full-nav-container.contact .nav-container .nav-container-link::after{
+    background: #EEE6DE;
+}
+
 .full-nav-container .logo-container,
 .full-nav-container .nav-container {
     display: flex;
-    flex: 1 1 auto;
-    justify-content: center;
+    flex: 1 1 0;
     z-index: 500;
+    justify-content: center;
 }
 
 .full-nav-container .logo-container {
     flex: 0 1 130px;
     max-height: 130px;
     cursor: pointer;
+    padding: 0 10px;
 }
 
 .full-nav-container .nav-container .nav-container-link {
     display: flex;
-    flex: 1 1 0px;
+    flex: 0 1 130px;
     flex-direction: column;
-    text-decoration: none;
-    color: #97313b;
     justify-content: center;
     align-items: center;
     margin: 0 15px;
@@ -42,15 +108,11 @@
     display: block;
     width: 0;
     height: 2px;
-    background: #7c2730;
     transition: width .3s;
 }
 
-.full-nav-container .nav-container .nav-container-link:hover{
-    color: #7c2730;
-}
-
-.full-nav-container .nav-container .nav-container-link:hover::after {
+.full-nav-container .nav-container .nav-container-link:hover::after,
+.full-nav-container .nav-container .nav-container-link.active::after {
     width: 100%;
     transition: width .3s;
 }

@@ -12,6 +12,7 @@ export class NavbarComponent implements OnInit {
   //@Output('navLink') navLink = new EventEmitter();
   nav_link: string;
   @Output() nav_flag = new EventEmitter<string>();
+  @Output() current_header = new EventEmitter<string>();
 
   constructor(private router: Router) { }
 
@@ -24,7 +25,7 @@ export class NavbarComponent implements OnInit {
    */
   handleNavigation(ref): void {
     if (ref === this.sel_navigation) return;
-    this.sel_navigation = ref;
+    this.sel_navigation = "load";
     this.nav_link = "start";
     this.nav_flag.emit("start");
 
@@ -33,6 +34,8 @@ export class NavbarComponent implements OnInit {
       this.router.navigateByUrl(ref).then((data) => {
         this.nav_link = "end";
         this.nav_flag.emit("end");
+        this.current_header.emit(ref);
+        this.sel_navigation = ref;
 
       }).catch((error) => {
         console.error("An unexpected error ocurred while navigating ", error);
